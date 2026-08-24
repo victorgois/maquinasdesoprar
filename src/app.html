@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.svg" type="image/svg+xml" />
+
+		<!-- Título e descrição saem do `<svelte:head>` da reportagem, para
+		     acompanharem o idioma escolhido. Aqui ficam só as marcas que não
+		     mudam: o cartão de compartilhamento, que os robôs leem do HTML
+		     pré-gerado. -->
+		<meta property="og:type" content="article" />
+		<meta property="og:site_name" content="Máquinas de soprar" />
+		<meta property="og:title" content="Máquinas de soprar" />
+		<meta
+			property="og:description"
+			content="Trompete, saxofone e trombone desmontados: reportagem interativa sobre como três instrumentos resolvem o mesmo problema — controlar uma coluna de ar — de três jeitos diferentes."
+		/>
+		<meta property="og:url" content="https://maquinasdesoprar.art" />
+		<meta property="og:image" content="https://maquinasdesoprar.art/images/instruments/coltrane-1600.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+
+		%sveltekit.head%
+	</head>
+
+	<body>
+		<div id="svelte">%sveltekit.body%</div>
+	</body>
+</html>
