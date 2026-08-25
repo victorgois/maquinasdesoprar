@@ -795,6 +795,34 @@
 			</div>
 		</div>
 	</section>
+
+	<!-- ── Referências ─────────────────────────────────────────────────────── -->
+	<section class="references">
+		<div class="references-head">
+			<p class="kicker">{c.references.kicker}</p>
+			<h2>{c.references.title}</h2>
+			<p class="lede">{c.references.lede}</p>
+		</div>
+
+		<div class="references-grid">
+			{#each c.references.groups as group}
+				<div class="ref-group">
+					<h3>{group.title}</h3>
+					<ol>
+						{#each group.items as item}
+							<li>
+								{#if item.url}
+									<a href={item.url} target="_blank" rel="noopener noreferrer">{@html item.text}</a>
+								{:else}
+									{@html item.text}
+								{/if}
+							</li>
+						{/each}
+					</ol>
+				</div>
+			{/each}
+		</div>
+	</section>
 </article>
 
 <style>
@@ -836,6 +864,7 @@
 	.coda h2,
 	.plates-head h2,
 	.honk-head h2,
+	.references-head h2,
 	.marker-value,
 	.tab {
 		font-variation-settings: "opsz" 14, "SOFT" 40;
@@ -1276,7 +1305,8 @@
 	}
 
 	.spec-head,
-	.coda-head {
+	.coda-head,
+	.references-head {
 		max-width: 46ch;
 		margin-bottom: 2.5rem;
 	}
@@ -1284,7 +1314,8 @@
 	.spec h2,
 	.coda h2,
 	.plates-head h2,
-	.honk-head h2 {
+	.honk-head h2,
+	.references-head h2 {
 		font-family: var(--display);
 		font-weight: 400;
 		font-size: clamp(1.65rem, 3.2vw, 2.4rem);
@@ -1565,6 +1596,72 @@
 	.volume {
 		margin-top: 1.2rem;
 		max-width: 16rem;
+	}
+
+	/* ── Referências ──────────────────────────────────────────────────────── */
+	.references {
+		max-width: 74rem;
+		margin: clamp(4rem, 14vh, 9rem) auto 0;
+		padding: clamp(3rem, 8vh, 5rem) clamp(1.25rem, 5vw, 4rem) clamp(4rem, 10vh, 6rem);
+		border-top: 1px solid var(--rule);
+	}
+
+	.references-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+		gap: clamp(2rem, 5vw, 3rem);
+	}
+
+	.ref-group h3 {
+		font-family: var(--fontFamily);
+		font-size: 0.66rem;
+		font-weight: 400;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--brass);
+		margin: 0 0 1.1rem;
+	}
+
+	.ref-group ol {
+		list-style: none;
+		counter-reset: ref;
+		margin: 0;
+		padding: 0;
+	}
+
+	.ref-group li {
+		counter-increment: ref;
+		position: relative;
+		padding-left: 1.7rem;
+		font-size: 0.86rem;
+		line-height: 1.6;
+		color: var(--muted);
+		margin: 0 0 0.95rem;
+	}
+
+	.ref-group li::before {
+		content: counter(ref) ".";
+		position: absolute;
+		left: 0;
+		font-family: var(--fontFamily);
+		font-size: 0.7rem;
+		color: var(--brass);
+	}
+
+	.ref-group li :global(em) {
+		font-style: italic;
+		color: var(--ink);
+	}
+
+	.ref-group a {
+		color: var(--muted);
+		text-decoration: none;
+		border-bottom: 1px solid var(--rule);
+	}
+
+	.ref-group a:hover {
+		color: var(--ink);
+		border-color: var(--ink);
 	}
 
 	/* ── Responsivo ───────────────────────────────────────────────────────── */
