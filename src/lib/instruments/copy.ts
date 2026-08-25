@@ -740,15 +740,16 @@ const pt: PageCopy = {
 				src: "honk",
 				full: 1600,
 				ratio: 1.6,
-				position: "center 45%",
-				alt: "Multidão em volta de uma fanfarra ao anoitecer, vista do alto por entre galhos floridos, durante o Honk Fest West, em Seattle.",
+				position: "center 30%",
+				alt: "Naipe de saxofones da banda Lovebomb Gogo, em trajes prateados, tocando andando pela rua e cercado pelo público, durante o Honk Fest West, em Seattle.",
 				body: [
 					"A primeira edição reuniu fanfarras de rua em <strong>Somerville, Massachusetts, em 2006</strong>: sem fins lucrativos, sem cachê para os músicos, sem palco, sem ingresso e sem eletricidade, produzida coletivamente, com as bandas tocando no meio do público em vez de de frente para ele. De lá a receita se espalhou por outras cidades e outros países.",
-					"Esta é uma delas, quatro anos depois: o Honk Fest West, em Seattle, fotografado do alto ao anoitecer. Não há palco na imagem porque não há palco — a banda está lá embaixo, dentro do círculo que se fechou em volta dela."
+					"Esta é uma delas, oito anos depois: o Honk Fest West, em Seattle, com o naipe de saxofones da Lovebomb Gogo — banda de Portland, Oregon — tocando andando pelo meio da rua. Não há palco na imagem porque não há palco: a banda está no meio do público, e não de frente para ele."
 				],
 				credit:
-					"Honk Fest West, bairro de Georgetown, Seattle (EUA), 2010. Foto: Joe Mabel, CC BY-SA 3.0, via Wikimedia Commons.",
-				creditUrl: "https://commons.wikimedia.org/wiki/File:Honk_Fest_West_2010-137.jpg"
+					"Naipe de saxofones da Lovebomb Gogo no Honk Fest West, bairro de Georgetown, Seattle (EUA), 2014. Foto: Joe Mabel, CC BY-SA 2.0, via Wikimedia Commons.",
+				creditUrl:
+					"https://commons.wikimedia.org/wiki/File:Honk_Fest_West_2014,_Georgetown,_Seattle_-_Lovebomb_Gogo_18_(14287947198).jpg"
 			},
 			{
 				src: "honk-sp-1",
@@ -1689,15 +1690,16 @@ const en: PageCopy = {
 				src: "honk",
 				full: 1600,
 				ratio: 1.6,
-				position: "center 45%",
-				alt: "A crowd gathered around a street band at dusk, seen from above through blossoming branches, at Honk Fest West in Seattle.",
+				position: "center 30%",
+				alt: "The saxophone section of the band Lovebomb Gogo, in silver costumes, playing while marching down a street and surrounded by the crowd, at Honk Fest West in Seattle.",
 				body: [
 					"The first edition gathered street bands in <strong>Somerville, Massachusetts, in 2006</strong>: non-profit, no fee for the musicians, no stage, no ticket and no electricity, collectively produced, with the bands playing in the middle of the crowd rather than facing it. From there the recipe spread to other cities and other countries.",
-					"This is one of them, four years later: Honk Fest West, in Seattle, shot from above at dusk. There is no stage in the picture because there is no stage — the band is down there, inside the circle that closed around it."
+					"This is one of them, eight years later: Honk Fest West, in Seattle, with the saxophone section of Lovebomb Gogo — a band from Portland, Oregon — playing while marching down the middle of the street. There is no stage in the picture because there is no stage: the band is in the middle of the crowd, not facing it."
 				],
 				credit:
-					"Honk Fest West, Georgetown, Seattle, USA, 2010. Photo: Joe Mabel, CC BY-SA 3.0, via Wikimedia Commons.",
-				creditUrl: "https://commons.wikimedia.org/wiki/File:Honk_Fest_West_2010-137.jpg"
+					"Saxophone section of Lovebomb Gogo at Honk Fest West, Georgetown, Seattle, USA, 2014. Photo: Joe Mabel, CC BY-SA 2.0, via Wikimedia Commons.",
+				creditUrl:
+					"https://commons.wikimedia.org/wiki/File:Honk_Fest_West_2014,_Georgetown,_Seattle_-_Lovebomb_Gogo_18_(14287947198).jpg"
 			},
 			{
 				src: "honk-sp-1",
