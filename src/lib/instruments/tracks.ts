@@ -154,9 +154,9 @@ export const TRACKS: Record<string, Track> = {
 	// Vai na foto de São Paulo, não na de Seattle: é fanfarra brasileira, e a
 	// gravação tem de tocar debaixo da imagem que ela descreve.
 	"honk-sp-1": {
-		id: "1uLsYv7VCMsHndVan70oUD",
-		title: "São S P",
-		artist: "Filarmônica de Pasárgada",
+		id: "7G4OFQRMArLV5hW3e1BZ1X",
+		title: "Oswaldo o Pombo",
+		artist: "Fanfarra Black Clube",
 		year: "2016",
 		note: {
 			pt: "Fanfarra de rua brasileira do mesmo circuito que o HONK!: sem palco, sem eletricidade, tocando no meio do público.",

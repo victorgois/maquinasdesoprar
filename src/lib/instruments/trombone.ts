@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { InstrumentBuilder, damp } from "./builder";
 import * as M from "./materials";
-import { arc, crook, ferrule, flare, lathe, line, path, rim, rod, sweep, taper, v } from "./geometry";
+import { crook, ferrule, flare, lathe, line, path, rim, rod, sweep, taper, v } from "./geometry";
 import { SLIDE_POSITIONS } from "./fingerings";
 import type { Fingering, InstrumentModel } from "./types";
 
@@ -34,13 +34,12 @@ import type { Fingering, InstrumentModel } from "./types";
  */
 
 const Y_SLIDE = 0; // os dois tubos da vara, na mesma altura
-const Y_TUNE = 1.9; // ramo inferior da bomba, quase na altura da vara
+const Y_TUNE = -2.4; // ramo inferior da bomba, um pouco abaixo da vara
 const Y_BELL = 11.6; // eixo da campana
 
 const Z_BELL = 0; // plano da campana e da bomba: a vara inteira fica à direita
 const Z_BACK = 3.4; // tubo da vara que recebe o tubo de ligação
 const Z_LEAD = 13.2; // tubo da vara que recebe o bocal (o mais à direita)
-const SWING = THREE.MathUtils.degToRad(8.4); // desvio lateral da ligação
 
 const R_INNER = 0.6; // vara interna
 const R_STOCK = 0.65; // meias, na ponta da vara interna
@@ -58,14 +57,18 @@ const X_RIM = 29; // bordo da campana
 const R_RIM = 10.15;
 
 /**
- * O tubo de ligação é desenhado deitado (todo em Y=0) e depois recebe a subida
- * suave até a altura da bomba — assim a curva lateral fica exata e a subida
- * entra sem quebrar a tangente nas duas pontas.
+ * O tubo de ligação é desenhado reto (em Y=0, Z=Z_BACK) e depois recebe duas
+ * curvas em "ease" (smoothstep) — uma bem sutil para o lado (Z, até o plano
+ * da campana) e uma um pouco mais visível para baixo (Y, até o ramo da
+ * bomba). Sem nenhum cotovelo: a curvatura cresce e cai suavemente do início
+ * ao fim, sem quebra de tangente em nenhum ponto do caminho.
  */
-function liftY(points: THREE.Vector3[]): THREE.Vector3[] {
+function bendGooseneck(points: THREE.Vector3[]): THREE.Vector3[] {
 	return points.map((p) => {
 		const t = THREE.MathUtils.clamp((p.x + 1.8) / (X_TUNE_JOINT + 1.8), 0, 1);
-		p.y = Y_TUNE * t * t * (3 - 2 * t);
+		const ease = t * t * (3 - 2 * t);
+		p.y = Y_TUNE * ease;
+		p.z = Z_BACK + (Z_BELL - Z_BACK) * ease;
 		return p;
 	});
 }
@@ -180,19 +183,11 @@ export function buildTrombone(): InstrumentModel {
 	}
 
 	// ─── Tubo de ligação: da vara até a bomba de afinação ─────────────────────
-	// A curva é lateral, quase deitada: sai do tubo da vara e atravessa 4,9 cm
-	// em Z até o plano da campana, com apenas 1,9 cm de subida no caminho. As
-	// duas dobras são assimétricas — fechada do lado do bocal (raio 6) e
-	// longuíssima do lado da bomba (raio 30, seis centímetros para virar doze
-	// graus). O miolo é reto.
+	// A curva lateral (Z) é quase imperceptível — só os 3,4 cm necessários
+	// para sair do plano da vara e chegar ao plano da campana. A descida em Y
+	// é um pouco mais visível: o ramo inferior da bomba fica abaixo da vara.
 	const gooseneck = b.part("gooseneck", v(-12, -16, -8), 4);
-	const goosePath = path(
-		liftY([
-			...arc(v(-1.8, 0, Z_BACK - 6), 6, v(0, 0, 1), v(-1, 0, 0), 0, SWING, 6),
-			...line(v(-2.677, 0, 3.336), v(-23.117, 0, 0.322), 6),
-			...arc(v(X_TUNE_JOINT, 0, 30), 30, v(0, 0, -1), v(-1, 0, 0), -SWING, 0, 8)
-		])
-	);
+	const goosePath = path(bendGooseneck(line(v(-1.8, 0, Z_BACK), v(X_TUNE_JOINT, 0, Z_BACK), 32)));
 	{
 		gooseneck.add(new THREE.Mesh(sweep(goosePath, taper(0.6, R_TUNE), 96, 20), M.brass));
 		gooseneck.add(ferrule(goosePath, 0.04, 0.86, 1.4, M.brass));

@@ -5,6 +5,25 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.svg" type="image/svg+xml" />
 
+		<!-- Decide o tema antes da primeira pintura, direto no `<html>`: se isso
+		     esperasse o Svelte montar, a página escura pré-gerada piscaria antes
+		     de virar clara para quem prefere claro. A escolha manual (gravada por
+		     `$lib/theme.ts`) vale mais que a do navegador; sem nenhuma das duas,
+		     o padrão é escuro, para bater com o CSS de quem tem JS desligado. -->
+		<script>
+			(function () {
+				try {
+					var stored = localStorage.getItem("theme");
+					var dark =
+						stored === "light"
+							? false
+							: stored === "dark" ||
+							  window.matchMedia("(prefers-color-scheme: dark)").matches;
+					document.documentElement.dataset.theme = dark ? "dark" : "light";
+				} catch (e) {}
+			})();
+		</script>
+
 		<!-- Título e descrição saem do `<svelte:head>` da reportagem, para
 		     acompanharem o idioma escolhido. Aqui ficam só as marcas que não
 		     mudam: o cartão de compartilhamento, que os robôs leem do HTML

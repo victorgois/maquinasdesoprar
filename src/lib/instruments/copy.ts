@@ -170,10 +170,10 @@ export interface PageCopy {
 const pt: PageCopy = {
 	opener: {
 		kicker: "Trompete, saxofone, trombone",
-		title: "Três instrumentos de sopro",
-		titleBreak: "como funcionam e uma breve história sobre eles",
+		title: "Máquinas de soprar",
+		titleBreak: "como funcionam e uma breve história sobre elas",
 		standfirst:
-			"Três instrumentos que passam a noite inteira resolvendo o mesmo problema — como controlar uma coluna de ar — de três jeitos que não conversam entre si. Um levou trezentos anos para conseguir tocar uma escala. Outro foi inventado por uma pessoa só. O terceiro está pronto desde o século XV. Desmonte os três.",
+			"Três instrumentos que passam a noite inteira resolvendo o mesmo problema — como controlar uma coluna de ar — de três jeitos que não conversam entre si. Viaje pela breve história destes três instrumentos nesta reportagem interativa. Do jazz às fanfarras de rua. Veja como eles funcionam na prática. Desmonte eles e veja como cada peça se encaixa. Use o teclado para simular notas e ver como o instrumento se comporta.",
 		meta: "Leia a Reportagem interativa",
 		cue: "role"
 	},
@@ -225,7 +225,7 @@ const pt: PageCopy = {
 					kicker: "Chicago, junho de 1928",
 					title: "Doze segundos sozinho",
 					body: [
-						"A gravação de <em>West End Blues</em> começa sem banda. Louis Armstrong entra sozinho, despejando uma cadência de doze segundos que ninguém pediu, e quando o resto entra o jazz já mudou de assunto: deixou de ser música de conjunto e virou arte de solista.",
+						"A gravação de <em>West End Blues</em> começa sem banda. Louis Armstrong entra sozinho, despejando uma cadência de doze segundos que ninguém previu.",
 						"O que torna isso estranho é a data. Cem anos antes, esse instrumento mal conseguia tocar uma escala — e o que estava entre uma coisa e outra não foi um músico, foi uma peça de metal do tamanho de um dedo.",
 						"Este capítulo é sobre essa peça."
 					]
@@ -238,11 +238,11 @@ const pt: PageCopy = {
 					kicker: "O bocal",
 					title: "Não existe palheta aqui",
 					body: [
-						"Não há nada vibrante dentro de um trompete. O que vibra são os lábios, apertados um contra o outro dentro desta taça, abrindo e fechando centenas de vezes por segundo e picotando o sopro em pulsos. O instrumento começa no corpo do músico e o metal é o resto da frase.",
+						"Não há nada vibrante dentro de um trompete. O que vibra são os lábios, apertados um contra o outro dentro desta taça, abrindo e fechando centenas de vezes por segundo e picotando o sopro em pulsos. O instrumento começa no corpo do músico e o metal é peça complementar.",
 						"É por isso que trompetista fala em <em>chops</em> como quem fala de condicionamento físico, e por que a embocadura de cada um soa diferente na mesma nota. A taça e a garganta moldam esses pulsos: rasas puxam o brilho, fundas devolvem um som largo e escuro.",
 						"Trocar de bocal muda mais o som do que trocar de trompete."
 					],
-					pull: "O instrumento começa no corpo do músico. O metal é o resto da frase."
+					pull: "O instrumento começa no corpo do músico e o metal é peça complementar."
 				},
 				{
 					id: "trumpet-valves",
@@ -251,7 +251,7 @@ const pt: PageCopy = {
 					focus: "valve-block",
 					notes: [60, 62, 64, 65, 67, 65, 64, 62],
 					kicker: "1815",
-					title: "Três pistões, e o bebop fica possível",
+					title: "Três pistões, e o bebop se torna possível",
 					body: [
 						"Sem pistões, o trompete só tocava a série harmônica: no grave, saltos enormes — dó, sol, dó, mi. Bom para fanfarra militar, inútil para melodia. Foi por isso que ele passou séculos como som de corte e de sinal, e que os barrocos tiveram que escrever no agudo extremo, onde as notas ficam próximas, para arrancar dele alguma linha cantável.",
 						"O pistão resolve por combinatória: cada um desvia o ar por um trecho extra de tubo que baixa a nota em um tom, meio tom ou um tom e meio. Sozinhos e combinados, os três cobrem os seis semitons que faltavam.",
@@ -282,7 +282,7 @@ const pt: PageCopy = {
 					kicker: "Nova York, 1959",
 					title: "Miles Davis, ou tocar menos",
 					body: [
-						"<em>Kind of Blue</em> foi gravado em duas sessões, com esboços em vez de partes escritas e quase nenhum ensaio. A ideia era retirar: onde o bebop empilhava um acorde a cada dois tempos, <em>So What</em> deixa uma escala só durar oito, dezesseis compassos. Não sobra grade para correr atrás — sobra espaço, e é preciso ter o que dizer nele.",
+						"<em>Kind of Blue</em> foi gravado em duas sessões, com esboços em vez de partes escritas e quase nenhum ensaio. A ideia era remover notas: onde o bebop empilhava um acorde a cada dois tempos, <em>So What</em> deixa uma escala só durar oito, dezesseis compassos. Não sobra grade para correr atrás — sobra espaço, e é preciso ter o que dizer nele.",
 						"A decisão musical tem uma versão mecânica exata, e ela está no instrumento. Registro médio, sem vibrato, poucas notas, e a surdina Harmon sem tubo colada ao microfone. Gillespie pediu à campana que atravessasse uma big band inteira; Miles pediu à campana que calasse a boca e passou a tarefa de projetar para o microfone. A partir dele, a eletricidade do estúdio faz parte do instrumento.",
 						"E ele repetiu o gesto a vida inteira. As sessões do <em>Birth of the Cool</em>, em 1949 e 1950, tinham trocado o brilho da big band por um naipe de câmara. O segundo quinteto, formado em 1964 com Wayne Shorter, Herbie Hancock, Ron Carter e Tony Williams, dissolveu a forma fixa do tema por dentro. Em 1969, <em>Bitches Brew</em> jogou tudo isso em cima de um estúdio de rock, e nos anos 1970 o trompete já saía por amplificador e pedal de wah-wah.",
 						"É um instrumento sem nenhuma peça nova em cento e cinquenta anos, usado cinco vezes para mudar de assunto. O que mudou, todas as vezes, foi o que ele decidiu não tocar."
@@ -311,7 +311,7 @@ const pt: PageCopy = {
 					kicker: "A linhagem",
 					title: "De Armstrong ao coreto",
 					body: [
-						"Depois de Armstrong e Gillespie veio Clifford Brown, com uma articulação limpa que virou régua; depois Lee Morgan e Freddie Hubbard, que praticamente definiram o som da Blue Note nos anos 1960; depois Booker Little e Woody Shaw, que empurraram a harmonia adiante antes de morrerem cedo demais.",
+						"Depois de Armstrong e Gillespie veio Clifford Brown, com uma articulação limpa que virou régua; depois Lee Morgan e Freddie Hubbard, que praticamente definiram o som da gravadora Blue Note nos anos 1960; depois Booker Little e Woody Shaw, que empurraram a harmonia adiante antes de morrerem cedo demais.",
 						"No Brasil, o trompete tem outra biografia. Cláudio Roditi e Márcio Montarroyos levaram o instrumento brasileiro para o circuito internacional, mas a história mais importante é anterior e mais coletiva: o trompete é a linha de frente do frevo e o instrumento das bandas de música e filarmônicas.",
 						"No interior do país, essas bandas foram por gerações a única escola formal de música ao alcance de quem quisesse aprender. Muito músico brasileiro leu sua primeira partitura num coreto, num instrumento emprestado pela própria banda.",
 						"E o trompete brasileiro tem repertório próprio: Silvério Pontes tocando choro e frevo ao lado do trombone de Zé da Velha é uma linhagem que não passa por Nova York em momento nenhum."
@@ -474,11 +474,11 @@ const pt: PageCopy = {
 					title: "John Coltrane leva o mecanismo ao limite",
 					body: [
 						"Em maio de 1959, poucas semanas depois de gravar <em>Kind of Blue</em> na banda de Miles, Coltrane entra em estúdio com <em>Giant Steps</em>: um tema que troca de centro tonal a cada dois tempos, andando de terça maior em terça maior, perto de 290 batidas por minuto. Os dois discos saem do mesmo ano e apontam para lados opostos — um tirando harmonia, o outro colocando mais do que cabe no compasso.",
-						"O crítico Ira Gitler já tinha batizado aquilo de <em>sheets of sound</em>, lençóis de som: notas em densidade tal que deixam de ser ouvidas uma a uma e passam a ser ouvidas como textura. E é aqui que o mecanismo da peça anterior vira o assunto. Cada nota dessas é um evento mecânico — um braço que gira, uma mola que devolve, uma sapatilha que precisa vedar no tempo certo. As horas absurdas de estudo diário que a lenda atribui a ele não eram só disciplina: eram o treino de uma interface entre a ideia e o couro.",
+						"O crítico Ira Gitler já tinha batizado aquilo de <em>sheets of sound</em>, lençóis de som: notas em densidade tal que deixam de ser ouvidas uma a uma e passam a ser ouvidas como textura. E é aqui que o mecanismo da peça anterior vira o assunto. Cada nota dessas é um evento mecânico — um braço que gira, uma mola que devolve, uma sapatilha que precisa vedar no tempo certo. As horas absurdas de estudo diário que a lenda atribui a ele não eram só disciplina: eram a criação de uma interface entre a ideia e o couro.",
 						"Depois ele faz o caminho contrário. <em>A Love Supreme</em>, gravado em dezembro de 1964 com o quarteto de McCoy Tyner, Jimmy Garrison e Elvin Jones, se apoia num motivo de quatro notas — o mesmo que o mecanismo está tocando agora, na tela — repetido e transposto por doze tonalidades. É o menor número de notas possível, usado com a mesma obstinação com que ele antes usava o maior.",
 						"E em 1960, em <em>My Favorite Things</em>, ele tira do armário o saxofone soprano, que quase ninguém levava a sério desde Sidney Bechet: o mesmo cone, metade do comprimento, uma oitava acima. No fim da vida, tocando por cima do registro previsto, com multifônicos e harmônicos forçados, ele já estava produzindo sons que nenhuma tabela de digitação prevê. O projeto de Adolphe Sax tinha pouco mais de cem anos; Coltrane achou onde ele acabava."
 					],
-					pull: "As horas de estudo não eram disciplina: eram o treino de uma interface entre a ideia e o couro."
+					pull: "As horas de estudo não eram disciplina: eram a criação de uma interface entre a ideia e o couro."
 				},
 				{
 					id: "sax-apart",
@@ -667,7 +667,7 @@ const pt: PageCopy = {
 					body: [
 						"Curtis Fuller entra no <em>Blue Train</em> de Coltrane em 1957 e mostra o trombone como voz de frente, não como recheio de naipe. Slide Hampton e Grachan Moncur III levam o instrumento para dentro da harmonia moderna.",
 						"No Brasil, Raul de Souza levou o trombone brasileiro para o mundo, gravando com Milton Nascimento, Sérgio Mendes, Airto Moreira e George Duke — e trouxe de volta um fraseado que não era nem americano nem exatamente de mais ninguém.",
-						"Zé da Velha e Bocato seguiram por outro caminho: choro, forró e frevo tocados com o mesmo braço direito, longe do circuito de jazz e sem nenhuma cerimônia com ele.",
+						"Zé da Velha e Bocato seguiram por outro caminho: choro, forró e frevo tocados com o mesmo braço direito, longe do circuito de jazz e sem nenhuma interface com ele.",
 						"E no carnaval de Pernambuco o trombone é espinha dorsal da orquestra de frevo: o naipe que dá o peso, o rasgo e a insistência do gênero. É o mesmo tubo do século XV, ainda ganhando repertório."
 					]
 				}
@@ -731,8 +731,8 @@ const pt: PageCopy = {
 		title: "A fanfarra é o formato original",
 		body: [
 			"Nada nesta reportagem começou em sala de concerto. O trompete veio da sinalização militar e do coreto; o saxofone foi projetado para banda militar e adotado pela rua; o trombone entrou no jazz porque era o único que precisava de espaço livre na traseira de uma carroça. Os três são, na origem, instrumentos de deslocamento — feitos para soar ao ar livre, sem amplificação, andando.",
-			"É por isso que eles aparecem em tanta música diferente e quase nunca no mesmo papel. Em Nova Orleans, as bandas de sopro tocavam enterro e desfile antes de tocarem jazz, e o jazz se formou juntando o que já estava na rua: marcha militar, ragtime, blues e a levada caribenha que Jelly Roll Morton chamou de <em>Spanish tinge</em>. O caminho nunca foi de mão única — oitenta anos depois foi a vez de as brass bands de lá reabsorverem o funk e o hip hop das mesmas calçadas, com a Dirty Dozen e a Rebirth, e o desfile voltou a soar como a cidade em volta dele.",
-			"No Brasil os mesmos três tubos entraram por outra porta: as bandas de música das praças e dos coretos do interior, que formaram gerações de sopristas antes de qualquer escola. Delas saíram os metais que o choro carioca aproveitou, os naipes do samba e a orquestra de frevo — que nasce no carnaval do Recife cruzando a marcha das bandas militares com o maxixe e é, até hoje, música de metal tocada andando. A troca com o Norte também correu nos dois sentidos: os Oito Batutas de Pixinguinha desembarcaram em Paris em 1922, a bossa nova e o cool jazz se encontraram nos anos 1960, e trombonistas como Raul de Souza foram gravar lá — voltando com um fraseado que não era de nenhum dos dois lugares.",
+			"É por isso que eles aparecem em tanta música diferente e quase nunca no mesmo papel. Em Nova Orleans, as bandas de sopro tocavam em desfiles antes de tocarem jazz, e o jazz se formou juntando o que já estava na rua: marcha militar, ragtime, blues e a levada caribenha que Jelly Roll Morton chamou de <em>Spanish tinge</em>. O caminho nunca foi de mão única — oitenta anos depois foi a vez de as brass bands de lá reabsorverem o funk e o hip hop das mesmas calçadas, com a Dirty Dozen e a Rebirth, e o desfile voltou a soar como a cidade em volta dele.",
+			"No Brasil os mesmos três tubos entraram por outra porta: as bandas de música das praças e dos coretos do interior, que formaram gerações de sopristas antes de qualquer escola. Delas saíram os metais que o choro carioca aproveitou, os naipes do samba e a orquestra de frevo — que nasce no carnaval do Recife cruzando a marcha das bandas militares com o maxixe e é, até hoje, música de metal tocada andando. A troca com o Norte global também correu nos dois sentidos: os Oito Batutas de Pixinguinha desembarcaram em Paris em 1922, a bossa nova e o cool jazz se encontraram nos anos 1960, e trombonistas como Raul de Souza foram gravar lá — voltando com um fraseado que não era de nenhum dos dois lugares.",
 			"O HONK! é a versão contemporânea desse arranjo — e é a partir daqui que a história tem fotografia."
 		],
 		plates: [
@@ -775,7 +775,7 @@ const pt: PageCopy = {
 				body: [
 					"Esta foto foi tirada de dentro da banda, não da calçada. O que se vê primeiro é o latão de um sopro carregado no ombro; depois, as costas de quem toca ao lado, com a frase que resume o assunto desta reportagem inteira — <em>quem sopra respira</em>.",
 					"No Brasil o HONK! caiu em terreno preparado. O carnaval de rua já era o lugar onde essas bandas existem: o bloco de sopro ensaia o ano inteiro para tocar andando, sem microfone, com a mesma formação de metais e percussão que a neofanfarra usa — e que ela herda, ao mesmo tempo, das brass bands de jazz, das <em>fanfares</em> francesas e das bandas de coreto daqui. Em Belo Horizonte, cidade que refez o próprio carnaval de rua na última década, a distância entre a fanfarra ativista e o bloco é quase só a data no calendário.",
-					"O <strong>Festival Internacional de Fanfarras HONK!BH</strong> acontece em <strong>29 de agosto de 2026</strong>, de graça, nas ruas da cidade. Se você chegou até aqui desmontando os três instrumentos na tela, esta é a versão montada: os mesmos tubos, na calçada, com a acústica que eles foram desenhados para ter."
+					"O <strong>Festival Internacional de Fanfarras HONK!BH</strong> acontece de <strong>28 a 30 de agosto de 2026</strong>, de graça, nas ruas da cidade. Se você chegou até aqui desmontando os três instrumentos na tela, esta é a versão montada: os mesmos tubos, na calçada, com a acústica que eles foram desenhados para ter."
 				],
 				credit:
 					"HONK! SP 2025, túnel José Roberto Fanganiello Melhem, São Paulo, novembro de 2025. Foto: ProtoplasmaKid, CC BY-SA 4.0, via Wikimedia Commons.",
@@ -783,9 +783,9 @@ const pt: PageCopy = {
 					"https://commons.wikimedia.org/wiki/File:Festival_de_fanfarrias_HONK!_SP_2025_21.jpg"
 			}
 		],
-		linkLabel: "HONK!BH · 29 de agosto de 2026 · Belo Horizonte",
+		linkLabel: "HONK!BH · 28 a 30 de agosto de 2026 · Belo Horizonte",
 		linkUrl:
-			"https://portalbelohorizonte.com.br/eventos/festival/cultural/festival-internacional-de-fanfarras-honkbh"
+			"https://www.instagram.com/honkbh/"
 	},
 
 	player: {
@@ -1125,10 +1125,10 @@ const pt: PageCopy = {
 const en: PageCopy = {
 	opener: {
 		kicker: "Trumpet, saxophone, trombone",
-		title: "Three brass instruments",
+		title: "Brass Machines",
 		titleBreak: "how they work and a brief story about them",
 		standfirst:
-			"Three instruments that spend all night solving the same problem — how to control a column of air — in three ways that don't speak to each other. One took three hundred years to manage a scale. One was invented by a single person. One has been finished since the 15th century. Take all three apart.",
+			"Three instruments that spend all night solving the same problem — how to control a column of air — in three ways that don't speak to each other. Take a trip through the brief history of these three instruments in this interactive feature. From jazz to street bands. See how they work in practice. Take them apart and see how each piece fits together. Use the keyboard to simulate notes and see how the instrument behaves.",
 		meta: "Interactive feature · scroll to take them apart",
 		cue: "scroll"
 	},
@@ -1179,7 +1179,7 @@ const en: PageCopy = {
 					kicker: "Chicago, June 1928",
 					title: "Twelve seconds alone",
 					body: [
-						"The recording of <em>West End Blues</em> starts with no band. Louis Armstrong comes in alone, pouring out a twelve-second cadenza nobody asked for, and by the time the rest arrive jazz has changed subject: it has stopped being ensemble music and become a soloist's art.",
+						"The recording of <em>West End Blues</em> starts with no band. Louis Armstrong comes in alone, pouring out a twelve-second cadenza nobody saw coming.",
 						"What makes that strange is the date. A century earlier this instrument could barely play a scale — and what stood between the two wasn't a musician, it was a piece of metal the size of a finger.",
 						"This chapter is about that piece."
 					]
@@ -1192,11 +1192,11 @@ const en: PageCopy = {
 					kicker: "The mouthpiece",
 					title: "There is no reed here",
 					body: [
-						"Nothing vibrates inside a trumpet. What vibrates is the lips, pressed together inside this cup, opening and closing hundreds of times a second and chopping the breath into pulses. The instrument starts in the player's body; the metal is the rest of the sentence.",
+						"Nothing vibrates inside a trumpet. What vibrates is the lips, pressed together inside this cup, opening and closing hundreds of times a second and chopping the breath into pulses. The instrument starts in the player's body, and the metal is a supporting part.",
 						"That's why trumpet players talk about <em>chops</em> the way athletes talk about conditioning, and why two embouchures sound different on the same note. The cup and throat shape those pulses: shallow ones pull out the brightness, deep ones give back something broad and dark.",
 						"Changing mouthpieces changes the sound more than changing trumpets."
 					],
-					pull: "The instrument starts in the player's body. The metal is the rest of the sentence."
+					pull: "The instrument starts in the player's body, and the metal is a supporting part."
 				},
 				{
 					id: "trumpet-valves",
@@ -1236,7 +1236,7 @@ const en: PageCopy = {
 					kicker: "New York, 1959",
 					title: "Miles Davis, or playing less",
 					body: [
-						"<em>Kind of Blue</em> was recorded in two sessions, from sketches rather than written parts, with almost no rehearsal. The idea was subtraction: where bebop stacked a chord every two beats, <em>So What</em> lets a single scale run for eight, sixteen bars. There is no grid to chase — there is space, and you had better have something to say in it.",
+						"<em>Kind of Blue</em> was recorded in two sessions, from sketches rather than written parts, with almost no rehearsal. The idea was removing notes: where bebop stacked a chord every two beats, <em>So What</em> lets a single scale run for eight, sixteen bars. There is no grid to chase — there is space, and you had better have something to say in it.",
 						"That musical decision has an exact mechanical version, and it lives in the instrument. Middle register, no vibrato, few notes, and the Harmon mute with the stem out, held against the microphone. Gillespie asked the bell to cut through an entire big band; Miles asked the bell to be quiet and handed the job of projecting to the microphone. From him on, the electricity of the studio is part of the instrument.",
 						"And he made the same move his whole life. The <em>Birth of the Cool</em> sessions, in 1949 and 1950, had already traded big-band brightness for a chamber-sized front line. The second quintet, formed in 1964 with Wayne Shorter, Herbie Hancock, Ron Carter and Tony Williams, dissolved fixed song form from the inside. In 1969 <em>Bitches Brew</em> threw all of it into a rock studio, and by the 1970s the trumpet was coming out through an amplifier and a wah-wah pedal.",
 						"An instrument with no new part in a hundred and fifty years, used five times over to change the subject. What changed, every time, was what he decided not to play."
@@ -1426,11 +1426,11 @@ const en: PageCopy = {
 					title: "John Coltrane takes the mechanism to its limit",
 					body: [
 						"In May 1959, a few weeks after recording <em>Kind of Blue</em> in Miles's band, Coltrane walked into a studio with <em>Giant Steps</em>: a tune that changes tonal centre every two beats, moving in major thirds, at close to 290 beats per minute. Both records come out of the same year and point in opposite directions — one taking harmony away, the other packing in more of it than the bar can hold.",
-						"The critic Ira Gitler had already named it: <em>sheets of sound</em>. Notes at a density where they stop being heard one at a time and start being heard as texture. And this is where the mechanism from the previous step becomes the subject. Every one of those notes is a mechanical event — an arm that turns, a spring that returns it, a pad that has to seal on time. The famously absurd hours of daily practice weren't only discipline: they were training an interface between the idea and the leather.",
+						"The critic Ira Gitler had already named it: <em>sheets of sound</em>. Notes at a density where they stop being heard one at a time and start being heard as texture. And this is where the mechanism from the previous step becomes the subject. Every one of those notes is a mechanical event — an arm that turns, a spring that returns it, a pad that has to seal on time. The famously absurd hours of daily practice weren't only discipline: they were creating an interface between the idea and the leather.",
 						"Then he goes the other way. <em>A Love Supreme</em>, recorded in December 1964 with the quartet of McCoy Tyner, Jimmy Garrison and Elvin Jones, rests on a four-note motif — the one the mechanism is playing on screen right now — repeated and transposed through all twelve keys. The smallest possible number of notes, worked with the same obstinacy he had brought to the largest.",
 						"And in 1960, on <em>My Favorite Things</em>, he took the soprano saxophone out of the closet, an instrument almost nobody had taken seriously since Sidney Bechet: the same cone, half the length, an octave up. By the end of his life, playing above the intended register with multiphonics and forced overtones, he was producing sounds no fingering chart accounts for. Adolphe Sax's design was barely a century old; Coltrane found where it ended."
 					],
-					pull: "The practice hours weren't discipline: they were training an interface between the idea and the leather."
+					pull: "The practice hours weren't discipline: they were creating an interface between the idea and the leather."
 				},
 				{
 					id: "sax-apart",
@@ -1617,7 +1617,7 @@ const en: PageCopy = {
 					body: [
 						"Curtis Fuller walks into Coltrane's <em>Blue Train</em> in 1957 and shows the trombone as a front-line voice, not section filler. Slide Hampton and Grachan Moncur III take the instrument into modern harmony.",
 						"In Brazil, Raul de Souza carried the Brazilian trombone into the world, recording with Milton Nascimento, Sérgio Mendes, Airto Moreira and George Duke — and brought back a phrasing that was neither American nor quite anyone else's.",
-						"Zé da Velha and Bocato went another way: choro, forró and frevo played with the same right arm, far from the jazz circuit and with no ceremony about it.",
+						"Zé da Velha and Bocato went another way: choro, forró and frevo played with the same right arm, far from the jazz circuit and with no interface to it at all.",
 						"And in the carnival of Pernambuco the trombone is the backbone of the frevo orchestra: the section that gives the genre its weight, its tear and its insistence. It's the same tube from the 15th century, still picking up repertoire."
 					]
 				}
@@ -1681,8 +1681,8 @@ const en: PageCopy = {
 		title: "The street band is the original format",
 		body: [
 			"Nothing in this feature started in a concert hall. The trumpet came from military signalling and the town bandstand; the saxophone was designed for military bands and adopted by the street; the trombone entered jazz because it was the only instrument that needed clear space at the back of a wagon. All three are, at heart, instruments of movement — built to sound outdoors, unamplified, walking.",
-			"Which is why they turn up in so much different music, almost never in the same role. In New Orleans the brass bands played funerals and parades before they played jazz, and jazz took shape out of what was already on the street: military march, ragtime, blues and the Caribbean lilt Jelly Roll Morton called the <em>Spanish tinge</em>. The traffic never ran one way — eighty years later the city's brass bands took the funk and hip-hop of those same pavements back in, with the Dirty Dozen and Rebirth, and the parade started sounding like the city around it again.",
-			"In Brazil the same three tubes came through another door: the town bands of the interior, playing in squares and bandstands, which trained generations of wind players before any school did. Out of them came the brass that Rio's choro put to use, the horn sections of samba and the frevo orchestra — born in the carnival of Recife by crossing the marches of military bands with maxixe, and still, today, brass music played walking. The exchange ran north as well: Pixinguinha's Oito Batutas landed in Paris in 1922, bossa nova and cool jazz met in the 1960s, and trombonists like Raul de Souza went to record in the United States — coming back with a phrasing that belonged to neither place.",
+			"Which is why they turn up in so much different music, almost never in the same role. In New Orleans the brass bands played parades before they played jazz, and jazz took shape out of what was already on the street: military march, ragtime, blues and the Caribbean lilt Jelly Roll Morton called the <em>Spanish tinge</em>. The traffic never ran one way — eighty years later the city's brass bands took the funk and hip-hop of those same pavements back in, with the Dirty Dozen and Rebirth, and the parade started sounding like the city around it again.",
+			"In Brazil the same three tubes came through another door: the town bands of the interior, playing in squares and bandstands, which trained generations of wind players before any school did. Out of them came the brass that Rio's choro put to use, the horn sections of samba and the frevo orchestra — born in the carnival of Recife by crossing the marches of military bands with maxixe, and still, today, brass music played walking. The exchange with the Global North also ran both ways: Pixinguinha's Oito Batutas landed in Paris in 1922, bossa nova and cool jazz met in the 1960s, and trombonists like Raul de Souza went to record there — coming back with a phrasing that belonged to neither place.",
 			"HONK! is the contemporary version of that arrangement — and from here on the story has photographs."
 		],
 		plates: [
@@ -1725,7 +1725,7 @@ const en: PageCopy = {
 				body: [
 					"This photograph was taken from inside the band, not from the pavement. What you see first is the brass of a horn carried on a shoulder; then the back of the player alongside, wearing the line that sums up this whole feature — <em>quem sopra respira</em>, whoever blows, breathes.",
 					"In Brazil, HONK! landed on prepared ground. Street carnival was already where these bands live: a brass bloco rehearses all year to play walking, without microphones, in the same brass-and-percussion formation the new street bands use — which they inherit, at once, from jazz brass bands, French <em>fanfares</em> and the bandstand bands of the Brazilian interior. In Belo Horizonte, a city that rebuilt its own street carnival over the past decade, the distance between an activist brass band and a carnival bloco is close to just a date on the calendar.",
-					"The <strong>HONK!BH International Street Band Festival</strong> takes place on <strong>29 August 2026</strong>, free, in the streets of the city. If you got here by taking three instruments apart on screen, this is the assembled version: the same tubes, on the pavement, with the acoustics they were designed for."
+					"The <strong>HONK!BH International Street Band Festival</strong> takes place from <strong>28 to 30 August 2026</strong>, free, in the streets of the city. If you got here by taking three instruments apart on screen, this is the assembled version: the same tubes, on the pavement, with the acoustics they were designed for."
 				],
 				credit:
 					"HONK! SP 2025, José Roberto Fanganiello Melhem tunnel, São Paulo, November 2025. Photo: ProtoplasmaKid, CC BY-SA 4.0, via Wikimedia Commons.",
@@ -1733,9 +1733,8 @@ const en: PageCopy = {
 					"https://commons.wikimedia.org/wiki/File:Festival_de_fanfarrias_HONK!_SP_2025_21.jpg"
 			}
 		],
-		linkLabel: "HONK!BH · 29 August 2026 · Belo Horizonte",
-		linkUrl:
-			"https://portalbelohorizonte.com.br/eventos/festival/cultural/festival-internacional-de-fanfarras-honkbh"
+		linkLabel: "HONK!BH · 28–30 August 2026 · Belo Horizonte",
+		linkUrl: "https://www.instagram.com/honkbh/"
 	},
 
 	player: {
