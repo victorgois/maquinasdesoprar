@@ -139,6 +139,15 @@ export interface PageCopy {
 		midiConnected: string;
 		midiConnect: string;
 	};
+	references: {
+		kicker: string;
+		title: string;
+		lede: string;
+		groups: {
+			title: string;
+			items: { text: string; url?: string }[];
+		}[];
+	};
 	readout: {
 		valves: string;
 		valvesRest: string;
@@ -731,15 +740,16 @@ const pt: PageCopy = {
 				src: "honk",
 				full: 1600,
 				ratio: 1.6,
-				position: "center 45%",
-				alt: "Multidão em volta de uma fanfarra ao anoitecer, vista do alto por entre galhos floridos, durante o Honk Fest West, em Seattle.",
+				position: "center 30%",
+				alt: "Naipe de saxofones da banda Lovebomb Gogo, em trajes prateados, tocando andando pela rua e cercado pelo público, durante o Honk Fest West, em Seattle.",
 				body: [
 					"A primeira edição reuniu fanfarras de rua em <strong>Somerville, Massachusetts, em 2006</strong>: sem fins lucrativos, sem cachê para os músicos, sem palco, sem ingresso e sem eletricidade, produzida coletivamente, com as bandas tocando no meio do público em vez de de frente para ele. De lá a receita se espalhou por outras cidades e outros países.",
-					"Esta é uma delas, quatro anos depois: o Honk Fest West, em Seattle, fotografado do alto ao anoitecer. Não há palco na imagem porque não há palco — a banda está lá embaixo, dentro do círculo que se fechou em volta dela."
+					"Esta é uma delas, oito anos depois: o Honk Fest West, em Seattle, com o naipe de saxofones da Lovebomb Gogo — banda de Portland, Oregon — tocando andando pelo meio da rua. Não há palco na imagem porque não há palco: a banda está no meio do público, e não de frente para ele."
 				],
 				credit:
-					"Honk Fest West, bairro de Georgetown, Seattle (EUA), 2010. Foto: Joe Mabel, CC BY-SA 3.0, via Wikimedia Commons.",
-				creditUrl: "https://commons.wikimedia.org/wiki/File:Honk_Fest_West_2010-137.jpg"
+					"Naipe de saxofones da Lovebomb Gogo no Honk Fest West, bairro de Georgetown, Seattle (EUA), 2014. Foto: Joe Mabel, CC BY-SA 2.0, via Wikimedia Commons.",
+				creditUrl:
+					"https://commons.wikimedia.org/wiki/File:Honk_Fest_West_2014,_Georgetown,_Seattle_-_Lovebomb_Gogo_18_(14287947198).jpg"
 			},
 			{
 				src: "honk-sp-1",
@@ -884,6 +894,70 @@ const pt: PageCopy = {
 		midiSearching: "Nenhum dispositivo encontrado.",
 		midiConnected: "Conectado a",
 		midiConnect: "Conectar teclado MIDI"
+	},
+
+	references: {
+		kicker: "Fontes",
+		title: "Referências",
+		lede: "Os livros e verbetes que sustentam os fatos, as datas e as histórias contadas nesta reportagem.",
+		groups: [
+			{
+				title: "Livros sobre jazz",
+				items: [
+					{ text: "Gioia, Ted. <em>The History of Jazz</em>. 2ª ed. Nova York: Oxford University Press, 2011." },
+					{
+						text: "Giddins, Gary; DeVeaux, Scott. <em>Jazz</em>. Nova York: W. W. Norton & Company, 2009."
+					},
+					{
+						text: "Shipton, Alyn. <em>A New History of Jazz</em>. Ed. revista. Londres: Continuum, 2007."
+					},
+					{
+						text: "Porter, Lewis. <em>John Coltrane: His Life and Music</em>. Ann Arbor: University of Michigan Press, 1998."
+					},
+					{
+						text: "Chambers, Jack. <em>Milestones: The Music and Times of Miles Davis</em>. Cambridge (MA): Da Capo Press, 1998."
+					},
+					{
+						text: "Davis, Miles; Troupe, Quincy. <em>Miles: The Autobiography</em>. Nova York: Simon & Schuster, 1989."
+					},
+					{
+						text: "Priestley, Brian. <em>Chasin' the Bird: The Life and Legacy of Charlie Parker</em>. Nova York: Oxford University Press, 2005."
+					},
+					{ text: "Cazes, Henrique. <em>Choro: do quintal ao Municipal</em>. São Paulo: Editora 34, 1998." }
+				]
+			},
+			{
+				title: "Livros sobre os instrumentos",
+				items: [
+					{
+						text: "Baines, Anthony. <em>Brass Instruments: Their History and Development</em>. Londres: Faber & Faber, 1976 (reimpr. Dover, 1993)."
+					},
+					{
+						text: "Baines, Anthony. <em>Woodwind Instruments and Their History</em>. Londres: Faber & Faber, 1957 (reimpr. Dover, 1991)."
+					},
+					{ text: "Tarr, Edward H. <em>The Trumpet</em>. Londres: B. T. Batsford, 1988." },
+					{ text: "Herbert, Trevor. <em>The Trombone</em>. New Haven: Yale University Press, 2006." },
+					{ text: "Cottrell, Stephen. <em>The Saxophone</em>. New Haven: Yale University Press, 2012." }
+				]
+			},
+			{
+				title: "Wikipédia",
+				items: [
+					{ text: "Trompete.", url: "https://pt.wikipedia.org/wiki/Trompete" },
+					{ text: "Saxofone.", url: "https://pt.wikipedia.org/wiki/Saxofone" },
+					{ text: "Trombone.", url: "https://pt.wikipedia.org/wiki/Trombone" },
+					{ text: "Adolphe Sax.", url: "https://pt.wikipedia.org/wiki/Adolphe_Sax" },
+					{ text: "Louis Armstrong.", url: "https://pt.wikipedia.org/wiki/Louis_Armstrong" },
+					{ text: "Dizzy Gillespie.", url: "https://pt.wikipedia.org/wiki/Dizzy_Gillespie" },
+					{ text: "Miles Davis.", url: "https://pt.wikipedia.org/wiki/Miles_Davis" },
+					{ text: "Coleman Hawkins.", url: "https://pt.wikipedia.org/wiki/Coleman_Hawkins" },
+					{ text: "Charlie Parker.", url: "https://pt.wikipedia.org/wiki/Charlie_Parker" },
+					{ text: "John Coltrane.", url: "https://pt.wikipedia.org/wiki/John_Coltrane" },
+					{ text: "Frevo.", url: "https://pt.wikipedia.org/wiki/Frevo" },
+					{ text: "Choro.", url: "https://pt.wikipedia.org/wiki/Choro" }
+				]
+			}
+		]
 	},
 
 	readout: {
@@ -1616,15 +1690,16 @@ const en: PageCopy = {
 				src: "honk",
 				full: 1600,
 				ratio: 1.6,
-				position: "center 45%",
-				alt: "A crowd gathered around a street band at dusk, seen from above through blossoming branches, at Honk Fest West in Seattle.",
+				position: "center 30%",
+				alt: "The saxophone section of the band Lovebomb Gogo, in silver costumes, playing while marching down a street and surrounded by the crowd, at Honk Fest West in Seattle.",
 				body: [
 					"The first edition gathered street bands in <strong>Somerville, Massachusetts, in 2006</strong>: non-profit, no fee for the musicians, no stage, no ticket and no electricity, collectively produced, with the bands playing in the middle of the crowd rather than facing it. From there the recipe spread to other cities and other countries.",
-					"This is one of them, four years later: Honk Fest West, in Seattle, shot from above at dusk. There is no stage in the picture because there is no stage — the band is down there, inside the circle that closed around it."
+					"This is one of them, eight years later: Honk Fest West, in Seattle, with the saxophone section of Lovebomb Gogo — a band from Portland, Oregon — playing while marching down the middle of the street. There is no stage in the picture because there is no stage: the band is in the middle of the crowd, not facing it."
 				],
 				credit:
-					"Honk Fest West, Georgetown, Seattle, USA, 2010. Photo: Joe Mabel, CC BY-SA 3.0, via Wikimedia Commons.",
-				creditUrl: "https://commons.wikimedia.org/wiki/File:Honk_Fest_West_2010-137.jpg"
+					"Saxophone section of Lovebomb Gogo at Honk Fest West, Georgetown, Seattle, USA, 2014. Photo: Joe Mabel, CC BY-SA 2.0, via Wikimedia Commons.",
+				creditUrl:
+					"https://commons.wikimedia.org/wiki/File:Honk_Fest_West_2014,_Georgetown,_Seattle_-_Lovebomb_Gogo_18_(14287947198).jpg"
 			},
 			{
 				src: "honk-sp-1",
@@ -1765,6 +1840,66 @@ const en: PageCopy = {
 		midiSearching: "No devices found.",
 		midiConnected: "Connected to",
 		midiConnect: "Connect MIDI keyboard"
+	},
+
+	references: {
+		kicker: "Sources",
+		title: "References",
+		lede: "The books and encyclopedia entries behind the facts, dates and stories told in this feature.",
+		groups: [
+			{
+				title: "Jazz books",
+				items: [
+					{ text: "Gioia, Ted. <em>The History of Jazz</em>. 2nd ed. New York: Oxford University Press, 2011." },
+					{ text: "Giddins, Gary; DeVeaux, Scott. <em>Jazz</em>. New York: W. W. Norton & Company, 2009." },
+					{ text: "Shipton, Alyn. <em>A New History of Jazz</em>. Rev. ed. London: Continuum, 2007." },
+					{
+						text: "Porter, Lewis. <em>John Coltrane: His Life and Music</em>. Ann Arbor: University of Michigan Press, 1998."
+					},
+					{
+						text: "Chambers, Jack. <em>Milestones: The Music and Times of Miles Davis</em>. Cambridge, MA: Da Capo Press, 1998."
+					},
+					{
+						text: "Davis, Miles; Troupe, Quincy. <em>Miles: The Autobiography</em>. New York: Simon & Schuster, 1989."
+					},
+					{
+						text: "Priestley, Brian. <em>Chasin' the Bird: The Life and Legacy of Charlie Parker</em>. New York: Oxford University Press, 2005."
+					},
+					{ text: "Cazes, Henrique. <em>Choro: do quintal ao Municipal</em>. São Paulo: Editora 34, 1998." }
+				]
+			},
+			{
+				title: "Books about the instruments",
+				items: [
+					{
+						text: "Baines, Anthony. <em>Brass Instruments: Their History and Development</em>. London: Faber & Faber, 1976 (repr. Dover, 1993)."
+					},
+					{
+						text: "Baines, Anthony. <em>Woodwind Instruments and Their History</em>. London: Faber & Faber, 1957 (repr. Dover, 1991)."
+					},
+					{ text: "Tarr, Edward H. <em>The Trumpet</em>. London: B. T. Batsford, 1988." },
+					{ text: "Herbert, Trevor. <em>The Trombone</em>. New Haven: Yale University Press, 2006." },
+					{ text: "Cottrell, Stephen. <em>The Saxophone</em>. New Haven: Yale University Press, 2012." }
+				]
+			},
+			{
+				title: "Wikipedia",
+				items: [
+					{ text: "Trumpet.", url: "https://en.wikipedia.org/wiki/Trumpet" },
+					{ text: "Saxophone.", url: "https://en.wikipedia.org/wiki/Saxophone" },
+					{ text: "Trombone.", url: "https://en.wikipedia.org/wiki/Trombone" },
+					{ text: "Adolphe Sax.", url: "https://en.wikipedia.org/wiki/Adolphe_Sax" },
+					{ text: "Louis Armstrong.", url: "https://en.wikipedia.org/wiki/Louis_Armstrong" },
+					{ text: "Dizzy Gillespie.", url: "https://en.wikipedia.org/wiki/Dizzy_Gillespie" },
+					{ text: "Miles Davis.", url: "https://en.wikipedia.org/wiki/Miles_Davis" },
+					{ text: "Coleman Hawkins.", url: "https://en.wikipedia.org/wiki/Coleman_Hawkins" },
+					{ text: "Charlie Parker.", url: "https://en.wikipedia.org/wiki/Charlie_Parker" },
+					{ text: "John Coltrane.", url: "https://en.wikipedia.org/wiki/John_Coltrane" },
+					{ text: "Frevo.", url: "https://en.wikipedia.org/wiki/Frevo" },
+					{ text: "Choro.", url: "https://en.wikipedia.org/wiki/Choro" }
+				]
+			}
+		]
 	},
 
 	readout: {
