@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onDestroy, onMount } from "svelte";
 	import { locale } from "$lib/i18n";
+	import { dark } from "$lib/theme";
 	import InstrumentViewer from "$lib/components/instruments/InstrumentViewer.svelte";
 	import MechanismReadout from "$lib/components/instruments/MechanismReadout.svelte";
 	import VirtualKeyboard from "$lib/components/instruments/VirtualKeyboard.svelte";
@@ -30,15 +31,6 @@
 	const HARMONICS = Array.from({ length: 15 }, (_, i) => 1 - 1 / (i + 1));
 
 	$: c = getCopy($locale);
-
-	/* ── Tema ──────────────────────────────────────────────────────────────────
-	   A página é escura e ponto: latão sobre preto é o contraste em que os três
-	   modelos leem melhor, e aqui — diferente do blog de onde a reportagem veio
-	   — não existe alternador de tema para disputar a paleta. A cor fica no
-	   `:root` do layout; `dark` sobrou como constante porque dois componentes a
-	   recebem por prop.                                                        */
-
-	const dark = true;
 
 	/* ── Narrativa ─────────────────────────────────────────────────────────── */
 
@@ -393,25 +385,53 @@
 	on:resize={checkStages}
 />
 
-<article style:--brass={dark ? "#d9a441" : "#8f6516"}>
+<article style:--brass={$dark ? "#d9a441" : "#8f6516"}>
 	<!-- ── Abertura ────────────────────────────────────────────────────────── -->
 	<header class="opener">
-		<p class="kicker">{c.opener.kicker}</p>
 		<div class="opener-title">
+			<!-- Cada lado agora leva dois metais: o de fora é o par original
+			     (trompete, trombone), o de dentro — encostado no título — é o
+			     saxofone, repetido nos dois lados para fechar o espelhamento. -->
+			<div class="horns horns-left">
+				<span class="horn horn-left" aria-hidden="true">
+					<InstrumentIcon instrument="trumpet" />
+					<span class="note note-1">♪</span>
+					<span class="note note-2">♫</span>
+					<span class="note note-3">♪</span>
+				</span>
+				<span class="horn horn-left horn-alt" aria-hidden="true">
+					<InstrumentIcon instrument="saxophone" />
+					<span class="note note-1">♫</span>
+					<span class="note note-2">♪</span>
+					<span class="note note-3">♫</span>
+				</span>
+			</div>
 			<h1>
 				{c.opener.title}<br /><em>{c.opener.titleBreak}</em>
 			</h1>
-			<p class="marks">
-				{#each ORDER as id}
-					<InstrumentIcon instrument={id} label={c.names[id]} />
-				{/each}
-			</p>
+			<div class="horns horns-right">
+				<span class="horn horn-right horn-alt" aria-hidden="true">
+					<InstrumentIcon instrument="saxophone" />
+					<span class="note note-1">♪</span>
+					<span class="note note-2">♫</span>
+					<span class="note note-3">♪</span>
+				</span>
+				<span class="horn horn-right" aria-hidden="true">
+					<InstrumentIcon instrument="trombone" />
+					<span class="note note-1">♫</span>
+					<span class="note note-2">♪</span>
+					<span class="note note-3">♫</span>
+				</span>
+			</div>
 		</div>
 		<p class="standfirst">{c.opener.standfirst}</p>
-		<div class="opener-foot">
+		<nav class="opener-foot">
 			<span class="meta">{c.opener.meta}</span>
+			{#each segments as segment (segment.id)}
+				<a class="menu-link" href="#{segment.id}">{c.names[segment.id]}</a>
+			{/each}
 			<a class="skip" href="#oficina">{c.skipToPlay}</a>
-		</div>
+		</nav>
 		<div class="harmonic" aria-hidden="true">
 			{#each HARMONICS as position}
 				<span style:left={`${position * 100}%`} />
@@ -423,7 +443,7 @@
 	{#each segments as segment, index (segment.id)}
 		{@const shown = steps[activeBySegment[index] ?? segment.firstStep] ?? steps[0]}
 		{@const owns = activeSegment === index}
-		<section class="scrolly">
+		<section class="scrolly" id={segment.id}>
 			<div class="stage">
 				<div class="stage-inner" use:mountWhenNear={index}>
 					<p class="stage-tag">
@@ -764,7 +784,7 @@
 			<div class="play-grid">
 				<div>
 					<h4>{c.coda.spectrumTitle}</h4>
-					<SpectrumScope {audio} {dark} accent={dark ? "rgb(200, 232, 16)" : "tomato"} />
+					<SpectrumScope {audio} dark={$dark} accent={$dark ? "rgb(200, 232, 16)" : "tomato"} />
 					<p class="hint">{c.coda.spectrumHint}</p>
 				</div>
 
@@ -919,7 +939,7 @@
 		position: relative;
 		height: 10px;
 		width: 100%;
-		max-width: 34rem;
+		max-width: stretch;
 	}
 
 	.harmonic span {
@@ -938,22 +958,22 @@
 		padding: clamp(3rem, 12vh, 9rem) clamp(1.25rem, 5vw, 4rem) clamp(3rem, 9vh, 6rem);
 	}
 
-	/* O título e o trio de ícones dividem a mesma linha de base: os desenhos são
-	   a assinatura da matéria, não uma ilustração solta. Quando a coluna aperta,
-	   eles caem para baixo do título em vez de espremê-lo. */
+	/* O título é o centro da abertura; os dois metais que o flanqueiam são a
+	   assinatura da matéria — um par, não o trio inteiro, porque só há dois
+	   lados para ocupar. Cada um sopra: o corpo pulsa como fole e notas sobem
+	   da campana em loop. Quando a coluna aperta, eles somem antes do texto
+	   ter de dividir espaço com mais nada. */
 	.opener-title {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: flex-end;
-		justify-content: space-between;
-		gap: clamp(1.5rem, 4vw, 3.5rem);
+		display: grid;
+		grid-template-columns: auto minmax(0, 1fr) auto;
+		align-items: center;
+		gap: clamp(1rem, 4vw, 2.5rem);
 		margin: 0 0 2rem;
+		text-align: center;
 	}
 
-	/* A base de 26rem é o que faz o trio caber na mesma linha do título em tela
-	   larga e cair para baixo dele quando não cabe mais. */
 	.opener h1 {
-		flex: 1 1 26rem;
+		flex: 0 1 auto;
 		min-width: 0;
 		font-family: var(--display);
 		font-weight: 400;
@@ -964,26 +984,139 @@
 	}
 
 	.opener h1 em {
+		display: inline-block;
+		margin-top: 0.5em;
 		font-style: italic;
+		font-size: 0.4em;
+		line-height: 1.3;
+		letter-spacing: -0.005em;
 		color: var(--brass);
 	}
 
-	.marks {
-		flex: none;
+	/* Os dois metais de cada lado ficam na mesma linha do título, o de fora
+	   alinhado com ele e o de dentro — o saxofone — encostado no texto. */
+	.horns {
 		display: flex;
-		align-items: flex-end;
-		gap: clamp(0.9rem, 2.2vw, 1.6rem);
-		margin: 0;
-		padding-bottom: 0.3em;
+		align-items: center;
+		gap: clamp(0.6rem, 2.4vw, 1.5rem);
+	}
+
+	/* A campana de cada ícone aponta para o título: o desenho nasce voltado
+	   para a esquerda, então o par da direita já serve como está e só o da
+	   esquerda precisa espelhar — os dois metais de cada lado viram juntos,
+	   porque os dois precisam encarar o mesmo centro. */
+	.horn {
+		position: relative;
+		flex: none;
+		display: block;
 		color: var(--brass);
-		font-size: clamp(2rem, 3.6vw, 2.8rem);
+	}
+
+	.horn-left {
+		transform: scaleX(-1);
+	}
+
+	/* Desalinhado de propósito: o saxofone pende mais baixo que o trompete e o
+	   trombone, então os dois metais de cada lado não leem como um bloco só. */
+	.horn-alt {
+		margin-top: clamp(0.7rem, 2.6vw, 1.8rem);
+	}
+
+	.horn :global(.instrument-icon) {
+		width: clamp(2.8rem, 6.6vw, 4.6rem);
+		height: clamp(2.8rem, 6.6vw, 4.6rem);
+		animation: horn-breathe 2.4s ease-in-out infinite;
+	}
+
+	.horn-right :global(.instrument-icon) {
+		animation-delay: 1.1s;
+	}
+
+	/* Os dois saxofones pulsam fora de compasso com o par original e um com o
+	   outro, para que os quatro metais não respirem juntos. */
+	.horn-alt :global(.instrument-icon) {
+		animation-delay: 0.55s;
+	}
+
+	.horn-right.horn-alt :global(.instrument-icon) {
+		animation-delay: 1.85s;
+	}
+
+	@keyframes horn-breathe {
+		0%,
+		100% {
+			transform: scale(1) rotate(0deg);
+		}
+		30% {
+			transform: scale(1.06) rotate(-3deg);
+		}
+		55% {
+			transform: scale(0.98) rotate(2deg);
+		}
+	}
+
+	/* As notas nascem perto da campana e sobem se desfazendo — sempre para
+	   cima, então o espelho do lado esquerdo não inverte a direção. Três por
+	   metal, cada uma num ponto de partida e num tempo diferente, para que
+	   pareçam soltas e não uma fileira andando junto. */
+	.note {
+		position: absolute;
+		left: 8%;
+		top: 6%;
+		font-family: var(--display);
+		font-size: 0.85em;
+		opacity: 0;
+		pointer-events: none;
+		animation: note-rise 2.6s ease-out infinite;
+	}
+
+	.note-2 {
+		left: 50%;
+		top: -8%;
+		font-size: 0.65em;
+		animation-delay: 0.9s;
+	}
+
+	.note-3 {
+		left: 26%;
+		top: 34%;
+		font-size: 0.5em;
+		animation-delay: 1.9s;
+	}
+
+	.horn-right .note-1 {
+		animation-delay: 0.5s;
+	}
+
+	.horn-right .note-2 {
+		animation-delay: 1.5s;
+	}
+
+	.horn-right .note-3 {
+		animation-delay: 2.4s;
+	}
+
+	@keyframes note-rise {
+		0% {
+			opacity: 0;
+			transform: translateY(0.1em) scale(0.6) rotate(-6deg);
+		}
+		18% {
+			opacity: 0.9;
+		}
+		75%,
+		100% {
+			opacity: 0;
+			transform: translateY(-1.8em) scale(1.15) rotate(8deg);
+		}
 	}
 
 	.standfirst {
-		font-size: clamp(0.95rem, 1.1vw, 1.08rem);
+		font-size: clamp(1.05rem, 1.6vw, 1.3rem);
 		line-height: 1.65;
+		text-align: center;
 		max-width: 54ch;
-		margin: 0 0 2.5rem;
+		margin: 0 auto 2.5rem;
 	}
 
 	.opener-foot {
@@ -992,6 +1125,7 @@
 		align-items: baseline;
 		gap: 1.5rem;
 		margin-bottom: 1.4rem;
+		justify-content: center;
 	}
 
 	.meta,
@@ -1004,6 +1138,22 @@
 
 	.meta {
 		color: var(--muted);
+	}
+
+	.menu-link {
+		font-family: var(--fontFamily);
+		font-size: 0.68rem;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--muted);
+		text-decoration: none;
+		border-bottom: 1px solid var(--rule);
+		transition: color 0.2s ease, border-color 0.2s ease;
+	}
+
+	.menu-link:hover {
+		color: var(--brass);
+		border-color: var(--brass);
 	}
 
 	.skip {
@@ -1189,6 +1339,10 @@
 		max-width: 74rem;
 		margin: 0 auto clamp(1.6rem, 5vh, 2.8rem);
 		padding: 0 clamp(1.25rem, 5vw, 4rem);
+	}
+
+	.honk-head h2 {
+		text-align: center;
 	}
 
 	.plate {
@@ -1755,11 +1909,24 @@
 		}
 	}
 
+	/* Abaixo disso os metais brigam com o título por largura: somem, e a
+	   página fica só com o texto centralizado. */
+	@media (max-width: 560px) {
+		.horn {
+			display: none;
+		}
+	}
+
 	@media (prefers-reduced-motion: reduce) {
 		.step,
 		.tab,
 		button {
 			transition-duration: 0.01ms;
+		}
+
+		.horn :global(.instrument-icon),
+		.note {
+			animation: none;
 		}
 	}
 </style>
